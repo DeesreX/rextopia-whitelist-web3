@@ -13,6 +13,16 @@ const nextConfig = {
         source: '/nfts.js',
         destination: '/nfts', // Proxy to Backend
         permanent: true,
+      },
+      {
+        source: '/rextoken.js',
+        destination: '/rextoken', // Proxy to Backend
+        permanent: true,
+      },
+      {
+        source: '/dao.js',
+        destination: '/dao', // Proxy to Backend
+        permanent: true,
       }
     ]
   }
