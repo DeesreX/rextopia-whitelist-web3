@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/whitelist.module.css";
 import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
 import { useEffect, useRef, useState } from "react";
@@ -54,15 +54,17 @@ export default function Home() {
    */
   const addAddressToWhitelist = async () => {
     try {
-      // We need a Signer here since this is a 'write' transaction.
-      const signer = await getProviderOrSigner(true);
+
+        // We need a Signer here since this is a 'write' transaction.
+        const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi,
+        WHITELIST_ABI,
         signer
       );
+
       // call the addAddressToWhitelist from the contract
       const tx = await whitelistContract.addAddressToWhitelist();
       setLoading(true);
@@ -89,7 +91,7 @@ export default function Home() {
       // have read-only access to the Contract
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi,
+        WHITELIST_ABI,
         provider
       );
       // call the numAddressesWhitelisted from the contract
@@ -112,7 +114,7 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi,
+        WHITELIST_ABI,
         signer
       );
       // Get the address associated to the signer which is connected to  MetaMask
@@ -158,6 +160,7 @@ export default function Home() {
       } else if (loading) {
         return <button className={styles.button}>Loading...</button>;
       } else {
+
         return (
           <button onClick={addAddressToWhitelist} className={styles.button}>
             Join the Whitelist
@@ -209,7 +212,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./crypto-devs.svg" />
+          <img className={styles.image} src="./rex.png" />
         </div>
       </div>
 
