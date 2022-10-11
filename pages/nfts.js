@@ -5,6 +5,18 @@
 // import { NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS } from "../constants";
 // import styles from "../styles/Home.module.css";
 
+
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>DAO</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      </div>
+  );
+}
+
 // export default function Home() {
 //   // walletConnected keep track of whether the user's wallet is connected or not
 //   const [walletConnected, setWalletConnected] = useState(false);

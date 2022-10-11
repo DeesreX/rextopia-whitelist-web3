@@ -11,6 +11,18 @@
 // } from "../constants";
 // import styles from "../styles/DAO.module.css";
 
+
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>DAO</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      </div>
+  );
+}
+
 // export default function Home() {
 //   // ETH Balance of the DAO contract
 //   const [treasuryBalance, setTreasuryBalance] = useState("0");
