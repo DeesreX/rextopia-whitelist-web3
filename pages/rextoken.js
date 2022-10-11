@@ -8,7 +8,7 @@
 //   TOKEN_CONTRACT_ABI,
 //   TOKEN_CONTRACT_ADDRESS,
 // } from "../constants";
-// import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (

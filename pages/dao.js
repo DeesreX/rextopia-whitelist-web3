@@ -9,7 +9,7 @@
 //   NFT_CONTRACT_ABI,
 //   NFT_CONTRACT_ADDRESS,
 // } from "../constants";
-// import styles from "../styles/DAO.module.css";
+import styles from "../styles/DAO.module.css";
 
 
 export default function Home() {
