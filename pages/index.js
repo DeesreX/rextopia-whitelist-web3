@@ -3,19 +3,19 @@ import styles from "../styles/Home.module.css";
 import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
 import { useEffect, useRef, useState } from "react";
-import { WHITELIST_CONTRACT_ADDRESS, abi_whitelist } from "../constants";
+import { WHITELIST_CONTRACT_ADDRESS, abi } from "../constants";
 
 export default function Home() {
+  // walletConnected keep track of whether the user's wallet is connected or not
   const [walletConnected, setWalletConnected] = useState(false);
+  // joinedWhitelist keeps track of whether the current metamask address has joined the Whitelist or not
   const [joinedWhitelist, setJoinedWhitelist] = useState(false);
+  // loading is set to true when we are waiting for a transaction to get mined
   const [loading, setLoading] = useState(false);
+  // numberOfWhitelisted tracks the number of addresses's whitelisted
   const [numberOfWhitelisted, setNumberOfWhitelisted] = useState(0);
+  // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
   const web3ModalRef = useRef();
-  const [presaleStarted, setPresaleStarted] = useState(false);
-  const [presaleEnded, setPresaleEnded] = useState(false);
-  const [isOwner, setIsOwner] = useState(false);
-  const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
-
 
   /**
    * Returns a Provider or Signer object representing the Ethereum RPC with or without the
@@ -60,7 +60,7 @@ export default function Home() {
       // update methods
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi_whitelist,
+        abi,
         signer
       );
       // call the addAddressToWhitelist from the contract
@@ -89,7 +89,7 @@ export default function Home() {
       // have read-only access to the Contract
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi_whitelist,
+        abi,
         provider
       );
       // call the numAddressesWhitelisted from the contract
@@ -112,7 +112,7 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        abi_whitelist,
+        abi,
         signer
       );
       // Get the address associated to the signer which is connected to  MetaMask
@@ -144,7 +144,7 @@ export default function Home() {
     }
   };
 
-     /*
+  /*
     renderButton: Returns a button based on the state of the dapp
   */
   const renderButton = () => {
@@ -173,8 +173,7 @@ export default function Home() {
     }
   };
 
-  
- // useEffects are used to react to changes in state of the website
+  // useEffects are used to react to changes in state of the website
   // The array at the end of function call represents what state changes will trigger this effect
   // In this case, whenever the value of `walletConnected` changes - this effect will be called
   useEffect(() => {
@@ -194,15 +193,15 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>RextopiA Whitelist</title>
+        <title>Whitelist Dapp</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Welcome to RextopiA</h1>
+          <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
           <div className={styles.description}>
-            Its an NFT collection made by DALLE.
+            Its an NFT collection for developers in Crypto.
           </div>
           <div className={styles.description}>
             {numberOfWhitelisted} have already joined the Whitelist
@@ -215,7 +214,7 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        Made with &#10084; by RextopiA
+        Made with &#10084; by Crypto Devs
       </footer>
     </div>
   );
