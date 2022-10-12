@@ -2,7 +2,7 @@ import { BigNumber, providers, utils } from "ethers";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
-import styles from "../styles/exchange.module.css";
+import styles from "../styles/Home.module.css";
 import { addLiquidity, calculateCD } from "../utils/addLiquidity";
 import {
   getCDTokensBalance,
@@ -513,7 +513,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./rex.png" />
+          <img className={styles.image} src="./cryptodev.svg" />
         </div>
       </div>
 
