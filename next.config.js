@@ -23,6 +23,11 @@ const nextConfig = {
         source: '/dao.js',
         destination: '/dao', // Proxy to Backend
         permanent: true,
+      },
+      {
+        source: '/exchange.js',
+        destination: '/exchange', // Proxy to Backend
+        permanent: true,
       }
     ]
   }

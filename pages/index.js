@@ -23,6 +23,9 @@ export default function Home() {
         <Link href="/dao">
           <button className={styles.button}>DAO</button>
         </Link>
+        <Link href="/exchange">
+          <button className={styles.button}>Exchange</button>
+        </Link>
       </main>
     </div>
   );
