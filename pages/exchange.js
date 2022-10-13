@@ -2,7 +2,7 @@ import { BigNumber, providers, utils } from "ethers";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/exchange.module.css";
 import { addLiquidity, calculateCD } from "../utils/addLiquidity";
 import {
   getCDTokensBalance,
@@ -353,6 +353,7 @@ export default function Home() {
             {utils.formatEther(ethBalance)} Ether
             <br />
             {utils.formatEther(lpBalance)} Crypto Dev LP tokens
+            alert({utils.formatEther(lpBalance)} Crypto Dev LP tokens)
           </div>
           <div>
             {/* If reserved CD is zero, render the state for liquidity zero where we ask the user

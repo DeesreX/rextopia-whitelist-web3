@@ -26,6 +26,15 @@ export default function Home() {
         <Link href="/exchange">
           <button className={styles.button}>Exchange</button>
         </Link>
+        <Link href="/ens">
+          <button className={styles.button}>ENS</button>
+        </Link>
+        <Link href="/rextopia">
+          <button className={styles.button}>RextopiA</button>
+        </Link>
+        <Link href="/ceramic">
+          <button className={styles.button}>Ceramic</button>
+        </Link>
       </main>
     </div>
   );

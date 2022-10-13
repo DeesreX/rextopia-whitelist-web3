@@ -1,4 +1,4 @@
-const { redirect } = require('next/dist/server/api-utils')
+// const { redirect } = require('next/dist/server/api-utils')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,6 +27,21 @@ const nextConfig = {
       {
         source: '/exchange.js',
         destination: '/exchange', // Proxy to Backend
+        permanent: true,
+      },
+      {
+        source: '/ens.js',
+        destination: '/ens', // Proxy to Backend
+        permanent: true,
+      },
+      {
+        source: '/rextopia.js',
+        destination: '/rextopia', // Proxy to Backend
+        permanent: true,
+      },
+      {
+        source: '/ceramic.js',
+        destination: '/ceramic', // Proxy to Backend
         permanent: true,
       }
     ]
