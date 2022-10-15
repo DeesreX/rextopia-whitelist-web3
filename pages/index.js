@@ -35,6 +35,9 @@ export default function Home() {
         <Link href="/ceramic">
           <button className={styles.button}>Ceramic</button>
         </Link>
+        <Link href="/rgw">
+          <button className={styles.button}>Random Game Winner</button>
+        </Link>
       </main>
     </div>
   );

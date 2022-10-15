@@ -43,6 +43,11 @@ const nextConfig = {
         source: '/ceramic.js',
         destination: '/ceramic', // Proxy to Backend
         permanent: true,
+      },
+      {
+        source: '/rgw.js',
+        destination: '/rgw', // Proxy to Backend
+        permanent: true,
       }
     ]
   }
