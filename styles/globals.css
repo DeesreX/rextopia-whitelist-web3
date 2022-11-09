@@ -1,27 +1,39 @@
-html,
-body {
+*{
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: black;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.main{
+  height: 100vh;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-* {
-  box-sizing: border-box;
+.calculator{
+  background-color: red;
+  padding: 20px;
+  border: solid 5px darkred;
+  border-radius: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.btn{
+  border: solid 1px white;
+  border-radius: 5px;
+  background-color: black;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.5s;
+
+}
+
+.btn:hover{
+  border: black 10px solid;
+  background-color: darkred;
+  /* make button cool */
+  transition: 0.5s;
+
 }
