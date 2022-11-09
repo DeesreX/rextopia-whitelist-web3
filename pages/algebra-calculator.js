@@ -10,7 +10,10 @@ export default function CalculatorPage() {
             </Head>
             <div class="basic-calculator">
                 <h1>Algebra Calculator</h1>
-                
+                <form action="/api/calculator" method="POST">
+                    equation: <input type="text" name="input" />
+                    <input type="submit" value="Submit"/>
+                </form>
             </div>
 
         </div>
